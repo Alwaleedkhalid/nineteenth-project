@@ -20,8 +20,8 @@ class IndexController extends Controller
     public function index()
     {
 
-    $company = company::orderby('id','desc')->simplepaginate(10);
-    return view('index' , compact('company'));
+    // $company = company::orderby('id','desc')->simplepaginate(10);
+    return view('index');
 
     }
 }

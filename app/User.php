@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'role', 'email', 'password','user_id',
+        'name', 'role', 'email', 'password',
     ];
 
     /**
@@ -37,13 +37,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // {{Relations}} \\
-    //**
-        // one to many / ->hasMany
-        // many to one / ->belongsto 
-        // many to many / ->belongstoMany
-        // one to one / ->hasOne(table with no forign key) .. ->belongsTo(table with forign key)
-    //
     public function report(){
  
         return $this->hasMany('App\report' ,'user_id');
