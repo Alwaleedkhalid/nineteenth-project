@@ -67,6 +67,6 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a href="{{ url('/') }}"><img src="https://etidal.org/upload/2018/02/etidal_logo_ar.1.png"  width="150px"></a>
+          {{-- <a href="{{ url('/') }}"><img src="https://pbs.twimg.com/profile_images/1016296857658646528/PuUowGbn_400x400.jpg"></a> --}}
         </nav>
       </div>

@@ -32,7 +32,3 @@
           {{$company->links()}}
          </div>
         @endsection
-        
-        {{-- <p>https://geekytomato.com/user-roles-access-control-acl-laravel/</p>
-        <p>https://bootsnipp.com/snippets/dldxB</p>  --}}
-  
