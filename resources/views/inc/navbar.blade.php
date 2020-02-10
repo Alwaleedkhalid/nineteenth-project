@@ -31,10 +31,10 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                @can('isManager')
+                                @can('isAdmin')
                                 <a class="dropdown-item" href="/admin-panel"><i class="fas fa-solar-panel"></i> {{ __('Admin Panel') }}</a>   
                                 @endcan
-                                @can('isManager')
+                                @can('isAdmin')
                                 <a class="dropdown-item" href="/dashboard"><i class="home icon"></i> {{ __('dashboard') }}</a>   
                                 @endcan
                                 <a class="dropdown-item" href="{{ route('logout') }}"
