@@ -3,32 +3,48 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\company;
 
-use App\User;
-//MainTable
-use App\report;
-//Units-->Authentication unit
-use App\authentication;
 
-use DB;
-
-class AuthenticationController extends Controller
+class CompanyController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        // if (!\Gate::allows('isWriter') && !\Gate::allows('isAdmin')) {
-        //     abort(403, "sorry don't have permission");
-        // }
-        // $user =  user::orderby('id','desc')->get();
-        // $report =  report::orderby('id','desc')->get();
+        if (!\Gate::allows('isAdmin')) {
+            abort(403, "sorry don't have permission");
+        }
 
+        $company =  company::orderby('id','desc')->paginate(10); //get all company by descrese id with pagination 10 ..
 
-        // return view('reports.report', compact('user','report'));
+        return view('reports.report', compact('company'));
+    
+    }
+
+    public function search(Request $request)
+    {
+        // $search = $request->get('search');
+        // // dd($search);
+        // $report = report::orderBy('id', 'desc')
+        // ->where('title', 'like', '%'. $search .'%')
+        // ->paginate(6)->appends('search', request('search'));
+        
+        // {{ ->orWhereHas for search at another table }} ..
+        // ->orWhereHas('table name', function($q) use ($search) {
+        //     return $q->where('attrebte name', 'LIKE', '%' . $search . '%');
+        // })
+
+        return view('', compact(''));
 
     }
 
@@ -51,20 +67,14 @@ class AuthenticationController extends Controller
     public function store(Request $request)
     {
 
-        // $data_from_report = $request->all();
 
-        // $create_report = authentication::create($data_from_report);
-        
-        // $create_report->user()->save();
-
-        // return redirect('report');
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     *   @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)

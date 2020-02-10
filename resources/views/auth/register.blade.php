@@ -79,7 +79,7 @@
     <div class="container">
         <div class="signup-content">
         <div class="col-6 imageContainer">
-            <img src="https://etidal.org/upload/2018/02/etidal_logo_ar.1.png" class="" alt="" id="picture">
+            <img src="https://pbs.twimg.com/profile_images/1016296857658646528/PuUowGbn_400x400.jpg" class="imageContainer" width="400px" id="picture">
         </div>
         <div class="signup-form">
         <h2 class="font-face form-title text-right"> تسجيل الدخول</h2>

@@ -2,17 +2,17 @@
     @section('content')
         <div class="row container-index top-buffer-index">
 
-          @foreach ($report as $reports)
+          {{-- @foreach ($report as $reports) --}}
           
           <div class="col card-index">
-            <a href="report/{{$reports->id}}">
-            <h3 class="title-index text-uppercase">{{$reports->title}}</h3>
+            {{-- <a href="report/{{$reports->id}}"> --}}
+            {{-- <h3 class="title-index text-uppercase">{{$reports->title}}</h3> --}}
             <div class="more">
               {{-- <div class="emptybar">
                 {{$reports->description}}
               </div> --}}
               {{-- <div class="filledbar"></div> --}}
-              <a class="text-muted spinner-grow" href="report/{{$reports->id}}"></a>
+              {{-- <a class="text-muted spinner-grow" href="report/{{$reports->id}}"></a> --}}
               {{-- <i class="fas fa-chevron-right"></i> --}}
               {{-- <button type="button" class="btn btn-secondary">Light</button> --}}
 
@@ -24,12 +24,12 @@
             </div> --}}
           </a>
           </div> 
-          @endforeach
+          {{-- @endforeach --}}
                   
           
         </div>
         <div class="pagination-index">
-          {{$report->links()}}
+          {{$company->links()}}
          </div>
         @endsection
         

@@ -791,12 +791,12 @@ label.valid:after {
 }
 
 .top-buffer {
-    margin-top: 12rem !important;
+    margin-top: 9rem !important;
 }
 
 .imageContainer {
     position: relative;
-    top: 130px;
+    top: 10px;
     left: 30px;
 }
 

@@ -45,7 +45,7 @@
       </form>
       <hr>
       <div class="row">
-      @foreach ($report as $reports)
+      {{-- @foreach ($report as $reports)
       <div class="col">
       <div class="card shadow ui raised link card pl-1 mt-2 ml-1" onclick="location.href='report/{{$reports->id}}'" style="width: 20rem;">
         <div class="card-body">
@@ -88,7 +88,7 @@
     </div>
     </div>
 </div>
-</div>
+</div> --}}
 
 {{-- <hr>
 

@@ -13,7 +13,7 @@
 
     <!-- Icon -->
     <div class="fadeIn first p-2 m-3">
-      <img src="https://etidal.org/upload/2018/02/etidal_logo_ar.1.png" id="icon" alt="User Icon" />
+      <img src="https://pbs.twimg.com/profile_images/1016296857658646528/PuUowGbn_400x400.jpg" id="icon" alt="User Icon" height="125" width="90">
     </div>
     
     <form method="POST" action="{{ route('login') }}">
@@ -78,9 +78,9 @@
         @if (Route::has('password.request'))
         <div id="formFooter">
 
-            <a class="underlineHover" href="{{ route('password.request') }}">
+            {{-- <a class="underlineHover" href="{{ route('password.request') }}">
                     {{ __('Forgot Your Password?') }}
-            </a>
+            </a> --}}
 
             <a class="underlineHoverRegister underlineHover" href="/register">
                 {{ __('Register') }}
