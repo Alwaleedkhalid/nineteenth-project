@@ -94,7 +94,8 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employee =  employee::find($id);
+        return view ('employees.editemployee', compact('employee'));
     }
 
     /**
@@ -117,7 +118,9 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employee = employee::find($id);
+        $employee->delete();
+        return redirect('employee');
     }
 
 }

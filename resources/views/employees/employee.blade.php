@@ -38,14 +38,14 @@
           <div class="row">
             
             <div class="col-3 clearfix">
-              <button type="button" class="btn btn-primary btn-sm center-block font-weight-bold float-right"><i class="fas fa-user-edit"></i></button>
+            <button herf="/employee/{{$employees->id}}/edit" type="button" class="btn btn-primary btn-sm center-block font-weight-bold float-right"><i class="fas fa-user-edit"></i></button>
             </div>
             <div class="col-3">
-              {{-- <form action="{{action('AdminController@destroy' , $users->id)}}" method="post">  --}}
-                  {{-- @csrf --}}
-                  {{-- @method('DELETE') --}}
+              <form action="{{action('EmployeeController@destroy' , $employees->id)}}" method="post"> 
+                  @csrf
+                  @method('DELETE')
                 <button class="btn btn-danger btn-sm font-weight-bold float-right" type="submit"><i class="fas fa-user-times"></i></button>
-              {{-- </form> --}}
+              </form>
             </div>
           </div>  
 
