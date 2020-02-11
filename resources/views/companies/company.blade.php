@@ -14,7 +14,7 @@
 <div class="row">
 
  <div class="col-5">
-    <div class="card border-light mb-3 shadow-sm p-3 mb-5 bg-white rounded">
+    {{-- <div class="card border-light mb-3 shadow-sm p-3 mb-5 bg-white rounded">
        <hr> 
        <h4 class="text-center">CHARTS</h4>
     </div>
@@ -23,11 +23,11 @@
       <hr>
       <h4 class="text-center">CHARTS</h4>
 
-    </div>
+    </div> --}}
 
     <div class="card border-light mb-3 shadow-sm p-3 mb-5 bg-white rounded">
 
-      <a href="/report/create" class="float-right ui teal labeled icon button">
+      <a href="/company/create" class="float-right  float-right ui teal labeled icon button ui grey button">
         Add New Company
         <i class="add icon"></i>
       </a>
@@ -45,7 +45,11 @@
       </form>
       <hr>
       <div class="row">
-        {{$company}}
+        @if(count ($company) > 0)
+
+        @else
+          <h1> No Company Add !</h1>
+      @endif
       {{-- @foreach ($report as $reports)
       <div class="col">
       <div class="card shadow ui raised link card pl-1 mt-2 ml-1" onclick="location.href='report/{{$reports->id}}'" style="width: 20rem;">
