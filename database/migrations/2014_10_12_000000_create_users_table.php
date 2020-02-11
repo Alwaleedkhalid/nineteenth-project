@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('role')->default('employee')->nullable(); // role for auth 
+            $table->string('role')->default('Viwe')->nullable(); // role for auth 
             $table->rememberToken();
             $table->timestamps();
         });
