@@ -30,7 +30,7 @@
         <th scope="row">{{$key+1}}</th>
         <td>{{strtoupper($employees->employee_name)}}</td>
         <td>{{$employees->employee_name}}</td>
-        <td>{{strtoupper($employees->employee_name)}}</td>
+        <td>{{strtoupper($employees->age)}}</td>
         {{-- <td>{{strtoupper($employees->employee_name)}}</td> --}}
 
         <td>

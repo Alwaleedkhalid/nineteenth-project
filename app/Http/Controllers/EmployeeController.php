@@ -95,7 +95,8 @@ class EmployeeController extends Controller
     public function edit($id)
     {
         $employee =  employee::find($id);
-        return view ('employees.editemployee', compact('employee'));
+
+        return view ('employees.editemployee', compact('employee' ,'id'));
     }
 
     /**
@@ -107,7 +108,20 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'employee_name' => 'required|regex:/^[a-zA-Z]+$/u|max:255',
+            'age' => 'required|numeric|min:15|max:70',
+        ]);
+
+        $employee =  employee::findOrFail($id);
+        
+        $employee->employee_name = $request->get('employee_name');
+        $employee->age = $request->get('age');
+
+        $employee->save();
+
+        return redirect('employee');
+
     }
 
     /**
