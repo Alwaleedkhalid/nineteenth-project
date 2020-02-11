@@ -38,7 +38,7 @@
           <div class="row">
             
             <div class="col-3 clearfix">
-            <button herf="/employee/{{$employees->id}}/edit" type="button" class="btn btn-primary btn-sm center-block font-weight-bold float-right"><i class="fas fa-user-edit"></i></button>
+            <a href="employee/{{$employees->id}}/edit" type="button" class="btn btn-primary btn-sm center-block font-weight-bold float-right"><i class="fas fa-user-edit"></i></a>
             </div>
             <div class="col-3">
               <form action="{{action('EmployeeController@destroy' , $employees->id)}}" method="post"> 
