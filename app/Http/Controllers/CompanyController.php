@@ -70,7 +70,7 @@ class CompanyController extends Controller
     {
 
         $data_from_company = $request->all();
-        
+        //dd(data_from_company);
         company::create($data_from_company);
 
         return redirect('company');
@@ -86,7 +86,9 @@ class CompanyController extends Controller
      */
     public function show($id)
     {
-        //
+        $company =  company::find($id);
+        // dd($company);
+        return view ('companies.showcompany', compact('company'));
     }
 
     /**
