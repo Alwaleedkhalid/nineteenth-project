@@ -5,10 +5,11 @@
 @section('content')
 
 <div class="card border-light mb-3 shadow-sm p-3 mb-5 bg-white rounded">
-  <a href="/employee/create" class="float-left  ui teal labeled icon button">
+  <h5><a href="/employee/create" class="float-left icon button text-muted">
     <i class="add icon"></i>
-   New Employee
-  </a> 
+   Add New Employee
+  </a></h5>
+  @if(count ($employee) > 0)
   <table class="table table-hover mt-5">
     {{-- <caption class="">قائمة الموظفين</caption> --}}
     <thead>
@@ -52,25 +53,18 @@
 
       </tr>
       @endforeach
-
-     
       
-      {{-- <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-        <td>@twitter</td>
-      </tr> --}}
     </tbody>
   </table>
+    
+    @else
+      <hr>
+      <h1 class="text-muted text-center font-weight-bold text-capitalize">No Employee Add !</h1>
+    @endif
+  <hr>
+  
+  <b class="">{{$employee->links("pagination::bootstrap-4")}}</b>
+
 </div>
 
 @endsection

@@ -17,9 +17,9 @@
 
     <div class="card border-light mb-3 shadow-sm p-3 mb-5 bg-white rounded">
 
-      <a href="/company/create" class="float-right  float-right ui teal labeled icon button ui grey button">
-        Add New Company
+      <a href="/company/create" class="float-right  float-right icon button ui grey button">
         <i class="add icon"></i>
+        Add New Company
       </a>
   
     </div>
@@ -28,10 +28,10 @@
 
  <div class="col-7">
     <div class="card border-light mb-3 shadow-sm p-3 mb-5 bg-white rounded">
+      @if(count ($company) > 0)
       <h1 class="text-muted text-center font-weight-bold text-capitalize">company List</h1>
       <hr>
       <div class="row">
-        @if(count ($company) > 0)
         @foreach ($company as $companies)
         <div class="col">
           <div class="card shadow ui raised link card p-1 mt-3" onclick="location.href='company/{{$companies->id}}'" style="width: 20rem;">
@@ -60,9 +60,9 @@
     </div>
     <hr>
       @else
-          <p class="text-center"> No Company Add !</p>
+          <h1 class="text-center text-muted font-weight-bold text-capitalize"> No Company Add !</h1>
       @endif
-      
+
       <b class="">{{$company->links("pagination::bootstrap-4")}}</b>
   </div>
 </div>
