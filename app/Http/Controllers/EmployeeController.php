@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\company;
-
-
-class CompanyController extends Controller
+use App\employee;
+class EmployeeController extends Controller
 {
-    /**
+        /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -25,9 +23,9 @@ class CompanyController extends Controller
             abort(403, "sorry don't have permission");
         }
 
-        $company =  company::orderby('id','desc')->paginate(10); //get all company by descrese id with pagination 10 ..
+        $employee =  employee::orderby('id','desc')->paginate(10); //get all employee by descrese id with pagination 10 ..
 
-        return view('companies.company', compact('company'));
+        return view('employees.employee', compact('employee'));
     
     }
 
@@ -115,4 +113,5 @@ class CompanyController extends Controller
     {
         //
     }
+
 }

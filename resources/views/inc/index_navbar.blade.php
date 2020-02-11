@@ -12,10 +12,14 @@
             </h5>
             
             @can('isAdmin')
-            <a class="text-muted" href="/dashboard"><i class="home icon"></i> 
-                
-                {{ __('Dashboard') }}    
-            </a>
+                <a href="company" class="text-muted"><i class="building icon"></i>
+                    {{ __('Company') }} 
+                </a>
+            @endcan
+            @can('isAdmin')
+                <a href="employee" class="text-muted"><i class="users icon"></i>
+                    {{ __('Employee') }} 
+                </a>
             @endcan
             
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -68,5 +72,6 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           {{-- <a href="{{ url('/') }}"><img src="https://pbs.twimg.com/profile_images/1016296857658646528/PuUowGbn_400x400.jpg" width="100px" height="60px"></a> --}}
+        <span class="text-uppercase text-black-50">{{Auth::user()->role}}</span>
         </nav>
       </div>

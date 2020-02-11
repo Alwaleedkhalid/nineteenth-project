@@ -6,7 +6,7 @@
           <div class="col card-index">
             {{-- <h3 class="title-index text-uppercase">Company</h3> --}}
             <div class="more">
-              <a href="/comapny"><i class="building icon icon-position massive"></i></a>
+              <a href="company"><i class="building icon icon-position massive"></i></a>
             </div>
           </div> 
                   

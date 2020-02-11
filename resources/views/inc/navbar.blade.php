@@ -1,6 +1,6 @@
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                  {{ config('app.name', 'TrackProject') }}
+                  {{ config('app.name', 'ninetenths') }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
@@ -32,11 +32,14 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 @can('isAdmin')
-                                <a class="dropdown-item" href="/admin-panel"><i class="fas fa-solar-panel"></i> {{ __('Admin Panel') }}</a>   
+                                <a class="dropdown-item" href="/"><i class="home icon"></i> {{ __('Home') }}</a>   
+                                @endcan 
+                                @can('isAdmin')
+                                <a class="dropdown-item" href="/company"><i class="building icon"></i> {{ __('Company') }}</a>   
                                 @endcan
                                 @can('isAdmin')
-                                <a class="dropdown-item" href="/dashboard"><i class="home icon"></i> {{ __('dashboard') }}</a>   
-                                @endcan
+                                <a class="dropdown-item" href="/employee"><i class="users icon"></i>{{ __('Employee') }}</a>   
+                                @endcan 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">

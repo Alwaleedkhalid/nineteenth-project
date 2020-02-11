@@ -18,26 +18,32 @@
 //     return view('index' , compact('report'));
 // });
 
-Route::get('/', 'IndexController@index');
-
-
 Auth::routes();
 
-Route::get('/dashboard', 'HomeController@index')->name('home');
+Route::get('/', 'IndexController@index'); // index route ..
 
-Route::get('/dashboard', 'HomeController@index')->name('home');
+Route::resource('company', 'CompanyController'); // company route with resources 
+
+Route::resource('employee', 'EmployeeController'); // employee route with resources 
+
+
+
+
+// Route::get('/dashboard', 'HomeController@index')->name('home');
+
+// Route::get('/dashboard', 'HomeController@index')->name('home');
 
 //admin resurses
-Route::resource('admin-panel', 'AdminController');
+// Route::resource('admin-panel', 'AdminController');
 // Route::GET('admin-panel/user-reports/{$id}', 'AdminController@show');
 
 //report
-Route::resource('report', 'MainTController');
-Route::get('/search', 'MainTController@search');
+// Route::resource('report', 'MainTController');
+// Route::get('/search', 'MainTController@search');
 
 //User reports
-Route::get('user-reports', 'UserReportsController@index');
-Route::get('user-reports/{id}', 'UserReportsController@show');
+// Route::get('user-reports', 'UserReportsController@index');
+// Route::get('user-reports/{id}', 'UserReportsController@show');
 
 
 
