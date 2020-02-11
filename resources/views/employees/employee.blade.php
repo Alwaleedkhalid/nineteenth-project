@@ -10,7 +10,7 @@
    Add New Employee
   </a></h5>
   @if(count ($employee) > 0)
-  <table class="table table-hover mt-5">
+  <table class="table table-hover mt-3">
     {{-- <caption class="">قائمة الموظفين</caption> --}}
     <thead>
       <tr>
@@ -29,7 +29,7 @@
             
         <th scope="row">{{$key+1}}</th>
         <td>{{strtoupper($employees->employee_name)}}</td>
-        <td>{{$employees->employee_name}}</td>
+        <td>{{$employees->email}}</td>
         <td>{{strtoupper($employees->age)}}</td>
         {{-- <td>{{strtoupper($employees->employee_name)}}</td> --}}
 

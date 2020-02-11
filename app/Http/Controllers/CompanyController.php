@@ -31,22 +31,6 @@ class CompanyController extends Controller
     
     }
 
-    public function search(Request $request)
-    {
-        // $search = $request->get('search');
-        // // dd($search);
-        // $report = report::orderBy('id', 'desc')
-        // ->where('title', 'like', '%'. $search .'%')
-        // ->paginate(6)->appends('search', request('search'));
-        
-        // {{ ->orWhereHas for search at another table }} ..
-        // ->orWhereHas('table name', function($q) use ($search) {
-        //     return $q->where('attrebte name', 'LIKE', '%' . $search . '%');
-        // })
-
-        return view('', compact(''));
-
-    }
 
     /**
      * Show the form for creating a new resource.

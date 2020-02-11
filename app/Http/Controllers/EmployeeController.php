@@ -29,23 +29,6 @@ class EmployeeController extends Controller
     
     }
 
-    public function search(Request $request)
-    {
-        // $search = $request->get('search');
-        // // dd($search);
-        // $report = report::orderBy('id', 'desc')
-        // ->where('title', 'like', '%'. $search .'%')
-        // ->paginate(6)->appends('search', request('search'));
-        
-        // {{ ->orWhereHas for search at another table }} ..
-        // ->orWhereHas('table name', function($q) use ($search) {
-        //     return $q->where('attrebte name', 'LIKE', '%' . $search . '%');
-        // })
-
-        return view('', compact(''));
-
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -66,10 +49,17 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-
-        $data_from_employee = $request->all();
         
-        employee::create($data_from_employee);
+
+        $this->validate($request,[
+            'employee_name' => 'required|regex:/^[a-zA-Z]+$/u|max:255',
+            'email' => 'required',
+            'age' => 'required|numeric|min:15|max:70'
+        ]);
+
+        $data_from_employee = $request->all(); // get all employee request ..
+
+        employee::create($data_from_employee); // update emmployee request ..
 
         return redirect('employee');
 
@@ -109,16 +99,16 @@ class EmployeeController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'employee_name' => 'required|regex:/^[a-zA-Z]+$/u|max:255',
-            'age' => 'required|numeric|min:15|max:70',
+            'employee_name' => 'regex:/^[a-zA-Z]+$/u|max:255',
+            // 'email' => 'required',
+            'age' => 'numeric|min:15|max:70'
         ]);
 
         $employee =  employee::findOrFail($id);
         
-        $employee->employee_name = $request->get('employee_name');
-        $employee->age = $request->get('age');
+        $data_from_employee = $request->all(); // get all employee request ..
 
-        $employee->save();
+        $employee->update($data_from_employee); // update emmployee request ..
 
         return redirect('employee');
 

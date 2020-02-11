@@ -13,12 +13,18 @@
             @csrf
             <div>
                 <label for="exampleInputEmail1">Update Employee Name</label>
-                <input name="employee_name" type="text" placeholder="{{$employee->employee_name}}"  class="form-control" required>
+                <input name="employee_name" type="text" value="{{$employee->employee_name}}"  class="form-control">
             </div>
 
             <div class="pt-4">
+                <label for="exampleInputEmail1" class="text-capitalize">Update Employee E-Mail</label>
+                <input name="email" type="email" class="form-control" value="{{$employee->email}}">
+            </div>
+
+
+            <div class="pt-4">
                 <label for="exampleInputEmail1">Update Employee Age</label>
-                <input name="age" type="number" placeholder="{{$employee->age}}"  class="form-control" required>
+                <input name="age" type="number" value="{{$employee->age}}"  class="form-control">
             </div>
                 
                 <button href="" type="submit" class="btn btn-primary mt-4">edit</button>

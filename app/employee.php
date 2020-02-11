@@ -8,6 +8,7 @@ class employee extends Model
 {
     protected $fillable = [
         'employee_name',
+        'email',
         'age',
     ];
 }
