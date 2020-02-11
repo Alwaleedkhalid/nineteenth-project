@@ -53,7 +53,9 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        $employee =  employee::all(); //get all employee ..
+
+        return view ('employees.createemployee' , compact('employee'));
     }
 
     /**
@@ -65,7 +67,11 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
 
+        $data_from_employee = $request->all();
+        
+        employee::create($data_from_employee);
 
+        return redirect('employee');
 
     }
 

@@ -55,7 +55,9 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        $company =  company::all(); //get all company ..
+
+        return view ('companies.createcompany' , compact('company'));
     }
 
     /**
@@ -67,6 +69,11 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
 
+        $data_from_company = $request->all();
+        
+        company::create($data_from_company);
+
+        return redirect('company');
 
 
     }

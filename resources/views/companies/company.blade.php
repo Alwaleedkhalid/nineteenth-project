@@ -14,16 +14,6 @@
 <div class="row">
 
  <div class="col-5">
-    {{-- <div class="card border-light mb-3 shadow-sm p-3 mb-5 bg-white rounded">
-       <hr> 
-       <h4 class="text-center">CHARTS</h4>
-    </div>
-
-    <div class="card border-light mb-3 shadow-sm p-3 mb-5 bg-white rounded">
-      <hr>
-      <h4 class="text-center">CHARTS</h4>
-
-    </div> --}}
 
     <div class="card border-light mb-3 shadow-sm p-3 mb-5 bg-white rounded">
 
@@ -35,129 +25,47 @@
     </div>
 
  </div>
+
  <div class="col-7">
     <div class="card border-light mb-3 shadow-sm p-3 mb-5 bg-white rounded">
-      <form method="get" action="/search" role="search">
-        <div class="ui icon input d-flex justify-content-around">
-              <input name="search" placeholder="Search..." type="search">
-              <i class="circular search link icon"></i>
-          </div>
-      </form>
+      <h1 class="text-muted text-center font-weight-bold text-capitalize">company List</h1>
       <hr>
       <div class="row">
         @if(count ($company) > 0)
-
-        @else
-          <h1> No Company Add !</h1>
-      @endif
-      {{-- @foreach ($report as $reports)
-      <div class="col">
-      <div class="card shadow ui raised link card pl-1 mt-2 ml-1" onclick="location.href='report/{{$reports->id}}'" style="width: 20rem;">
-        <div class="card-body">
-            <h5 class="card-title">{{strtoupper($reports->title)}}</h5>
-            @if($reports->created_at == $reports->updated_at)
-            
-              <small class="text-muted float-right">{{($reports->created_at->format('d M y : h'))}}</small>
-            
-            @else
-  
-              <small class="text-muted float-right" style="background:#ff075714;">{{($reports->created_at->format('d M y : h'))}}</small>
-               
-            @endif
-          <h6 class="card-subtitle mb-2 text-muted">{{ucfirst($reports->user->name)}}</h6>
-        <p class="card-text max_length_description">{{ucfirst($reports->description)}}</p>
-        <hr>
-        <a href="report/{{$reports->id}}" class="card-link">More    </a><i class="fas fa-chevron-right"></i>
-          @if ($reports->status == 'in process')
-            <div class="spinner-border spinner-border-sm text-warning float-right" role="status">
-              <span class="sr-only">Loading...</span>
+        @foreach ($company as $companies)
+        <div class="col">
+          <div class="card shadow ui raised link card p-1 mt-3" onclick="location.href='company/{{$companies->id}}'" style="width: 20rem;">
+              <div class="card-body">
+                  <h5 class="card-title">{{strtoupper($companies->company_name)}}</h5>
+                  
+                {{-- <h6 class="card-subtitle mb-2 text-muted">{{ucfirst($companies->user->name)}}</h6>
+                <p class="card-text max_length_description">{{ucfirst($companies->description)}}</p> --}}
+              <hr>
+              @if($companies->created_at == $companies->updated_at)
+                  
+                    <small class="text-muted float-right">{{($companies->created_at->format('d M y : h'))}}</small>
+                  
+                  @else
+        
+                    <small class="text-muted float-right" style="background:#ff075714;">{{($companies->created_at->format('d M y : h'))}}</small>
+                     
+                  @endif
+              <a href="company/{{$companies->id}}" class="card-link">More    </a><i class="fas fa-chevron-right"></i>
+                
+              </div>
             </div>
-          @elseif($reports->status == 'rejected')
-            <div class="float-right">
-              <i class="fas fa-times-circle text-danger"></i>
-            </div>
-          @else
-            <div class="float-right">
-              <i class="fas fa-check-circle text-success"></i>
-            </div>
-          @endif
+          </div>
           
-        </div>
-      </div>
-    </div>
-      @endforeach
+        @endforeach
     </div>
     <hr>
-    <div class="m-1 align-self-center">
-    <b>{{$report->links("pagination::bootstrap-4")}}</b>
-    </div>
-    </div>
-</div>
-</div> --}}
-
-{{-- <hr>
-
-<div class="row">
-  <div class="col-8">
-    <form method="get" action="/search" role="search">
-      <div class="ui icon input">
-          <input name="search" placeholder="Search..." type="search">
-          <i class="circular search link icon"></i>
-      </div>
-    </form>
-  </div>
-  <div class="col-4">
-    <a href="/report/create" class="float-right ui teal labeled icon button">
-      Create New Report
-      <i class="add icon"></i>
-    </a>
+      @else
+          <p class="text-center"> No Company Add !</p>
+      @endif
+      
+      <b class="">{{$company->links("pagination::bootstrap-4")}}</b>
   </div>
 </div>
-<div class="card border-light pb-4 shadow-sm pl-5 bg-white rounded" style="width: 50rem;">
-<div class="row">
-
-  @foreach ($report as $reports)
-<div class="col">
-  <div class="card shadow ui raised link card p-1 mt-3" onclick="location.href='report/{{$reports->id}}'" style="width: 20rem;">
-      <div class="card-body">
-          <h5 class="card-title">{{strtoupper($reports->title)}}</h5>
-          @if($reports->created_at == $reports->updated_at)
-          
-            <small class="text-muted float-right">{{($reports->created_at->format('d M y : h'))}}</small>
-          
-          @else
-
-            <small class="text-muted float-right" style="background:#ff075714;">{{($reports->created_at->format('d M y : h'))}}</small>
-             
-          @endif
-        <h6 class="card-subtitle mb-2 text-muted">{{ucfirst($reports->user->name)}}</h6>
-      <p class="card-text max_length_description">{{ucfirst($reports->description)}}</p>
-      <hr>
-      <a href="report/{{$reports->id}}" class="card-link">More    </a><i class="fas fa-chevron-right"></i>
-        @if ($reports->status == 'in process')
-          <div class="spinner-border spinner-border-sm text-warning float-right" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-        @elseif($reports->status == 'rejected')
-          <div class="float-right">
-            <i class="fas fa-times-circle text-danger"></i>
-          </div>
-        @else
-          <div class="float-right">
-            <i class="fas fa-check-circle text-success"></i>
-          </div>
-        @endif
-        
-      </div>
-    </div>
-  </div>
-  
-@endforeach
-</div>
-</div>
-<div class="mt-5">
- <b>{{$report->links("pagination::bootstrap-4")}}</b>
-</div> --}}
 @endsection
 
 <script>
