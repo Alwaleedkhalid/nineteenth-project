@@ -18,7 +18,7 @@
         <th scope="col">Name</th>
         <th scope="col">E-Mail</th>
         <th scope="col">Age</th>
-        <th scope="col">Company</th>
+        {{-- <th scope="col">Company</th> --}}
         <th scope="col" class="text-center"></th>
       </tr>
     </thead>
@@ -31,7 +31,7 @@
         <td>{{strtoupper($employees->employee_name)}}</td>
         <td>{{$employees->employee_name}}</td>
         <td>{{strtoupper($employees->employee_name)}}</td>
-        <td>{{strtoupper($employees->employee_name)}}</td>
+        {{-- <td>{{strtoupper($employees->employee_name)}}</td> --}}
 
         <td>
 
