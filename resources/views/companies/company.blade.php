@@ -47,7 +47,7 @@
                   
                   @else
         
-                    <small class="text-muted float-right" style="background:#ff075714;">{{($companies->created_at->format('d M y : h'))}}</small>
+                    <small class="text-success float-right">{{($companies->updated_at->format('d M y : h'))}}</small>
                      
                   @endif
               <a href="company/{{$companies->id}}" class="card-link">More    </a><i class="fas fa-chevron-right"></i>

@@ -27,11 +27,13 @@
                 <label for="exampleInputEmail1">Update number of employee</label>
                 <label for="exampleInputEmail1" class="text-capitalize">number of employees of the company </label>
                 <select name="number_of_employee">
-                    {{-- <option value="" disabled selected>Select</option>
-                    <option value="0-50">0-50</option>
-                    <option value="50-100">50-100</option>
-                    <option value="100-500">100-500</option>
-                    <option value="500-1000">500-1000</option>                   --}}
+
+                    <option value="">Select</option>
+                    <option value="0-50" {{ $company->number_of_employee == "0-50" ? 'selected' : '' }}>0-50</option>
+                    <option value="50-100" {{ $company->number_of_employee == "50-100" ? 'selected' : '' }}>50-100</option>
+                    <option value="100-500" {{ $company->number_of_employee == "100-500" ? 'selected' : '' }}>100-500</option>
+                    <option value="500-1000" {{ $company->number_of_employee == "500-1000" ? 'selected' : '' }}>500-1000</option>
+                 
                 </select>
             </div>
                 
