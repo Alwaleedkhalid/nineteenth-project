@@ -56,7 +56,7 @@ class CompanyController extends Controller
         $this->validate($request,[
             'company_name' => 'required|regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/u|max:255',
             'since' => 'required|numeric|min:1800|max:2020',
-            'number_of_employee' => 'required'
+            'number_of_employee' => 'required|in:0-50,50-100,100-500,500-1000'
         ]);
 
         $data_from_company = $request->all();
@@ -89,7 +89,10 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
-        //
+        $company =  company::find($id);
+
+        return view ('companies.editcompany', compact('company' ,'id'));
+
     }
 
     /**
@@ -101,7 +104,21 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'company_name' => 'regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/u|max:255',
+            'since' => 'numeric|min:1800|max:2020',
+            'number_of_employee' => 'in:0-50,50-100,100-500,500-1000'
+        ]);
+
+        $company =  company::findOrFail($id);
+        
+        $data_from_company = $request->all(); // get all company request ..
+
+        $company->update($data_from_company); // update company request ..
+
+        return redirect('company');
+
+
     }
 
     /**

@@ -21,13 +21,13 @@
 
             <div class="form-group">
                 <label for="" class="text-capitalize">since</label>
-                <input name="since" class="form-control" required>
+                <input name="since" type="number" class="form-control" required>
             </div>
             
             <div class="form-group pt-2">
                 <label for="exampleInputEmail1" class="text-capitalize">number of employees of the company </label>
                 <select name="number_of_employee">
-                    <option value="">Select</option>
+                    <option value="" disabled selected>Select</option>
                     <option value="0-50">0-50</option>
                     <option value="50-100">50-100</option>
                     <option value="100-500">100-500</option>

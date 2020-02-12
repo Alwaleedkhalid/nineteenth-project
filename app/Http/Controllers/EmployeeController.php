@@ -99,7 +99,7 @@ class EmployeeController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'employee_name' => 'regex:/^[a-zA-Z]+$/u|max:255',
+            'employee_name' => 'regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/u|max:255',
             // 'email' => 'required',
             'age' => 'numeric|min:15|max:70'
         ]);
