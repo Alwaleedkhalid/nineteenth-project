@@ -33,7 +33,13 @@
                     <p  class="form-control" aria-label="Sizing example input"  aria-describedby="inputGroup-sizing-default">{{$company->number_of_employee}}</p>
                   </div>
                 <a href="/company/{{$company->id}}/eidt" class="btn btn-primary btn-lg float-right">Eidt</a>
-
+                
+                <form action="{{action('CompanyController@destroy' , $company->id)}}" method="post"> 
+                    @csrf
+                    @method('DELETE')
+                  <button class="btn btn-danger btn-sm font-weight-bold float-right" type="submit">Delete</button>
+                </form>
+  
             </div>
         </div>
         
