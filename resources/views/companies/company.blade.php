@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 <style>
-.max_length_description {
+.max_length_company_name {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -36,7 +36,7 @@
         <div class="col">
           <div class="card shadow ui raised link card p-1 mt-3" onclick="location.href='company/{{$companies->id}}'" style="width: 20rem;">
               <div class="card-body">
-                  <h5 class="card-title">{{strtoupper($companies->company_name)}}</h5>
+                  <h5 class="card-title max_length_company_name">{{strtoupper($companies->company_name)}}</h5>
                   
                 {{-- <h6 class="card-subtitle mb-2 text-muted">{{ucfirst($companies->user->name)}}</h6>
                 <p class="card-text max_length_description">{{ucfirst($companies->description)}}</p> --}}
