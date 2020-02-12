@@ -13,7 +13,9 @@ $ composer install
 ```bash
 $ composer update           
 ```
-## Add new .env file
+## Add new .env file and create new DB in your local server
+
+after adding DB_DATABASE name in .env file and created in your local server
 
 Use following commands line in your termenal to migration .
 
