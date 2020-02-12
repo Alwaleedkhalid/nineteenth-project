@@ -112,7 +112,7 @@ class CompanyController extends Controller
         $company =  company::findOrFail($id);
         
         $data_from_company = $request->all(); // get all company request ..
-
+        // dd($data_from_company);
         $company->update($data_from_company); // update company request ..
 
         return redirect('company');
@@ -129,7 +129,7 @@ class CompanyController extends Controller
     public function destroy($id)
     {
         $company = company::find($id);
-        $company->delete();
+        $company->delete(); //delete company by id ..
         return redirect('company');
 
     }

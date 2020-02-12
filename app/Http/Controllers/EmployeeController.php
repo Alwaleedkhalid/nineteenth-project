@@ -53,7 +53,7 @@ class EmployeeController extends Controller
         
 
         $this->validate($request,[
-            'employee_name' => 'required|regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/u|max:255', // can put speces
+            'employee_name' => 'required|regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/u|max:255', // can put speces for name ..
             'email' => 'required|unique:employees,email', // email is unique = no dublicated !
             'age' => 'required|numeric|min:15|max:70'
         ]);
@@ -108,7 +108,7 @@ class EmployeeController extends Controller
         $employee =  employee::findOrFail($id);
         
         $data_from_employee = $request->all(); // get all employee request ..
-
+        dd($data_from_employee);
         $employee->update($data_from_employee); // update emmployee request ..
 
         return redirect('employee');
@@ -124,7 +124,7 @@ class EmployeeController extends Controller
     public function destroy($id)
     {
         $employee = employee::find($id);
-        $employee->delete();
+        $employee->delete();  //delete employee by id
         return redirect('employee');
     }
 

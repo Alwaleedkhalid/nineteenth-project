@@ -20,6 +20,7 @@ class IndexController extends Controller
     {
 
     $user = user::all();
+    
     return view('index' , compact('user'));
 
     }
