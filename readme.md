@@ -13,7 +13,7 @@ $ composer install
 ```bash
 $ composer update           
 ```
-### add new .env file
+## Add new .env file
 
 Use following commands line in your termenal to migration .
 
@@ -24,4 +24,9 @@ $ php artisan migrate:fresh
 ```bash
 $ php artisan migrate:refresh --seed
 ```
+
+### Login
+
+E-mail : admin@admin.com
+Password : password
 
