@@ -50,7 +50,7 @@
         
 </div>
 
-        {{$company}}
+        {{-- {{$company}} --}}
        
        
     @endsection

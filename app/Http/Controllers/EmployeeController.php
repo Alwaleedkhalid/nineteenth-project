@@ -37,6 +37,10 @@ class EmployeeController extends Controller
      */
     public function create()
     {
+        if (!\Gate::allows('isAdmin')) {
+            abort(403, "sorry don't have permission");
+        }
+
         $employee =  employee::all(); //get all employee ..
 
         return view ('employees.createemployee' , compact('employee'));
@@ -85,6 +89,10 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
+        if (!\Gate::allows('isAdmin')) {
+            abort(403, "sorry don't have permission");
+        }
+
         $employee =  employee::find($id);
 
         return view ('employees.editemployee', compact('employee' ,'id'));
@@ -108,7 +116,7 @@ class EmployeeController extends Controller
         $employee =  employee::findOrFail($id);
         
         $data_from_employee = $request->all(); // get all employee request ..
-        dd($data_from_employee);
+        // dd($data_from_employee);
         $employee->update($data_from_employee); // update emmployee request ..
 
         return redirect('employee');

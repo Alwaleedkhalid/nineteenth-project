@@ -38,6 +38,9 @@ class CompanyController extends Controller
      */
     public function create()
     {
+        if (!\Gate::allows('isAdmin')) {
+            abort(403, "sorry don't have permission");
+        }
         
         $company =  company::all(); //get all company ..
 
@@ -75,6 +78,10 @@ class CompanyController extends Controller
      */
     public function show($id)
     {
+        if (!\Gate::allows('isAdmin')) {
+            abort(403, "sorry don't have permission");
+        }
+
         $company =  company::find($id);
         // dd($company);
         return view ('companies.showcompany', compact('company'));
@@ -88,6 +95,10 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
+        if (!\Gate::allows('isAdmin')) {
+            abort(403, "sorry don't have permission");
+        }
+
         $company =  company::find($id);
 
         return view ('companies.editcompany', compact('company' ,'id'));
