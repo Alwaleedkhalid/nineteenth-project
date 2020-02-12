@@ -26,8 +26,8 @@
                 <label for="exampleInputEmail1">Update Employee Age</label>
                 <input name="age" type="number" value="{{$employee->age}}"  class="form-control">
             </div>
-                
-                <button href="" type="submit" class="btn btn-primary mt-4">edit</button>
+                <hr>
+                <button href="" type="submit" class="btn btn-success btn-lg font-weight-bold float-left mt-2"><i class="paper plane outline icon"></i>Edit</button>
             </div>
          </form>  
 

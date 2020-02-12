@@ -2,8 +2,9 @@
     @section('content')
     <div class="card border-light mb-3 shadow-sm p-3 mb-5 bg-white rounded">
         <h5><a href="/company" class="float-left icon button text-muted">
-        <i class="building icon"></i>
+        <i class="chevron left icon"></i>
         Companies List
+        <i class="building icon"></i>
         </a></h5>
         <hr>
 
@@ -41,9 +42,9 @@
                 <form action="{{action('CompanyController@destroy' , $company->id)}}" method="post"> 
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-danger btn-lg font-weight-bold float-right" type="submit">Delete</button>
+                    <button class="btn btn-danger btn-lg font-weight-bold float-right" type="submit">Delete <i class="times icon"></i></button>
                 </form>
-                <a href="/company/{{$company->id}}/edit" class="btn btn-primary btn-lg font-weight-bold float-left">Eidt</a>
+                <a href="/company/{{$company->id}}/edit" class="btn btn-primary btn-lg font-weight-bold float-left"><i class="edit outline icon"></i>Eidt</a>
             </div>
         </div>
         

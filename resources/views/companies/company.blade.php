@@ -27,7 +27,7 @@
  </div>
 
  <div class="col-7">
-    <div class="card border-light mb-3 shadow-sm p-3 mb-5 bg-white rounded">
+    <div class="card border-light mb-3 shadow-sm p-4  bg-white rounded">
       @if(count ($company) > 0)
       <h1 class="text-muted text-center font-weight-bold text-capitalize">company List</h1>
       <hr>
@@ -63,7 +63,7 @@
           <h1 class="text-center text-muted font-weight-bold text-capitalize"> No Company Add !</h1>
       @endif
 
-      <b class="">{{$company->links("pagination::bootstrap-4")}}</b>
+      <p class="text-center">{{$company->links()}}</p>
   </div>
 </div>
 @endsection

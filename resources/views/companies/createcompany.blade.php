@@ -5,8 +5,9 @@
 
 <div class="card border-light mb-3 shadow-sm p-3  bg-white rounded">
     <h5><a href="/company" class="float-left icon button text-muted">
-    <i class="building icon"></i>
+    <i class="chevron left icon"></i>
     Companies List
+    <i class="building icon"></i>
     </a></h5>
     <hr>
 
@@ -20,7 +21,7 @@
             </div>
 
             <div class="form-group">
-                <label for="" class="text-capitalize">since</label>
+                <label for="" class="text-capitalize">since (1800 To 2020)</label>
                 <input name="since" type="number" class="form-control" required>
             </div>
             
@@ -35,8 +36,8 @@
                 </select>
             </div>
 
-
-            <button href="" type="submit" class="btn btn-primary">Submit</button>
+            <hr>
+            <button href="" type="submit" class="btn btn-success btn-lg font-weight-bold float-left mt-2"><i class="paper plane outline icon"></i>Submit</button>
         
     </form>
 </div>

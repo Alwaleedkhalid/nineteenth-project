@@ -42,7 +42,7 @@
         </section>
 
         <footer class="page-footer">
-                @include('inc.footer')
+                {{-- @include('inc.footer') --}}
         </footer>
     </div>
 </body>
