@@ -39,6 +39,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
+        
         $company =  company::all(); //get all company ..
 
         return view ('companies.createcompany' , compact('company'));
@@ -52,6 +53,11 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'company_name' => 'required|regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/u|max:255',
+            'since' => 'required|numeric|min:1800|max:2020',
+            'number_of_employee' => 'required'
+        ]);
 
         $data_from_company = $request->all();
         //dd(data_from_company);

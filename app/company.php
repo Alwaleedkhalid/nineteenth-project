@@ -8,6 +8,8 @@ class company extends Model
 {
     protected $fillable = [
         'company_name',
+        'since',
+        'number_of_employee',
     ];
 
 }

@@ -52,8 +52,8 @@ class EmployeeController extends Controller
         
 
         $this->validate($request,[
-            'employee_name' => 'required|regex:/^[a-zA-Z]+$/u|max:255',
-            'email' => 'required',
+            'employee_name' => 'required|regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/u|max:255', // can put speces
+            'email' => 'required|unique:employees,email', // email is unique = no dublicated !
             'age' => 'required|numeric|min:15|max:70'
         ]);
 
