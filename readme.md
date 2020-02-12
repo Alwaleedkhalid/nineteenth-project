@@ -27,6 +27,7 @@ $ php artisan migrate:refresh --seed
 
 ### Login
 
-E-mail : admin@admin.com
-Password : password
+- E-mail : admin@admin.com
+
+ - Password : password
 
